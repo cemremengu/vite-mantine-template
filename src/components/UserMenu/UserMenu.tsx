@@ -5,7 +5,7 @@ export function UserMenu() {
   return (
     <Menu shadow="lg" width={200}>
       <Menu.Target>
-        <ActionIcon p={5} radius="md" size={35} variant="light">
+        <ActionIcon p={5} variant="default" radius="lg" size={35}>
           <Avatar size={35} radius="md" />
         </ActionIcon>
       </Menu.Target>

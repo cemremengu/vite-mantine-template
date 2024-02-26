@@ -7,7 +7,7 @@ export function ColorSchemeToggle() {
   return (
     <Menu shadow="lg" width={200}>
       <Menu.Target>
-        <ActionIcon p={5} radius="md" size={35} variant="light">
+        <ActionIcon p={5} radius="md" size={35} variant="default">
           {colorScheme === 'auto' ? (
             <IconCircleHalf2 size="sm" />
           ) : colorScheme === 'dark' ? (

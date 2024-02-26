@@ -19,9 +19,8 @@ import {
   IconGauge,
   IconChevronRight,
   IconChevronLeft,
-  IconActivity,
-  IconFingerprint,
   IconPlus,
+  IconHome,
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
@@ -34,12 +33,8 @@ export default function App() {
   const [active, setActive] = useState(0);
 
   const data = [
+    { icon: IconHome, label: 'Home' },
     { icon: IconGauge, label: 'Dashboard' },
-    {
-      icon: IconFingerprint,
-      label: 'Security',
-    },
-    { icon: IconActivity, label: 'Activity' },
   ];
 
   return (
@@ -47,7 +42,7 @@ export default function App() {
       layout="alt"
       header={{ height: 60 }}
       navbar={{
-        width: opened ? 200 : 60,
+        width: opened ? 250 : 60,
         breakpoint: 'sm',
       }}
       padding="xl"
@@ -57,7 +52,7 @@ export default function App() {
           <Grid.Col span={6}>
             <Group p={15} justify="flex-start">
               <Text size="lg" fw={500}>
-                Dashboard
+                Home
               </Text>
             </Group>
           </Grid.Col>
@@ -76,7 +71,7 @@ export default function App() {
       </AppShell.Header>
       <AppShell.Navbar p="xs">
         <AppShell.Section>
-          <Center h={50}>
+          <Center h={40}>
             <MantineLogo type={opened ? 'full' : 'mark'} size={25} />
           </Center>
         </AppShell.Section>
