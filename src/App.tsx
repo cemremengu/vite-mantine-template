@@ -15,6 +15,7 @@ import {
   UnstyledButton,
   Avatar,
   Text,
+  Grid,
 } from '@mantine/core';
 import {
   IconGauge,
@@ -57,30 +58,37 @@ export default function App() {
         padding="md"
       >
         <AppShell.Header h={60}>
-          <Group p={10} justify="flex-end">
-            <Button size="xs" leftSection={<IconPlus size={14} />} variant="light">
-              ADD DATA
-            </Button>
-            <UnstyledButton size="sm">
-              <Group>
-                <Avatar
-                  src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png"
-                  radius="xl"
-                  size="sm"
-                />
-
-                <div style={{ flex: 1 }}>
-                  <Text size="sm" fw={500}>
-                    Harriette Spoonlicker
-                  </Text>
-
-                  <Text c="dimmed" size="xs">
-                    hspoonlicker@outlook.com
-                  </Text>
-                </div>
+          <Grid>
+            <Grid.Col span={6}>
+              <Group p={15} justify="flex-start">
+                <Text size="lg" fw={500}>
+                  Dashboard
+                </Text>
               </Group>
-            </UnstyledButton>
-          </Group>
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <Group p={10} justify="flex-end">
+                <Button size="xs" leftSection={<IconPlus size={14} />} variant="light">
+                  ADD DATA
+                </Button>
+                <UnstyledButton size="sm">
+                  <Group>
+                    <Avatar src={null} radius="xl" size="sm" alt="Vitaly Rtishchev">
+                      VR
+                    </Avatar>
+                    <Flex direction="column">
+                      <Text size="sm" fw={500}>
+                        Harriette Spoonlicker
+                      </Text>
+                      <Text c="dimmed" size="xs">
+                        My Organization
+                      </Text>
+                    </Flex>
+                  </Group>
+                </UnstyledButton>
+              </Group>
+            </Grid.Col>
+          </Grid>
         </AppShell.Header>
 
         <AppShell.Navbar p="xs">
@@ -89,7 +97,6 @@ export default function App() {
               <MantineLogo size={25} />
             </Center>
           </AppShell.Section>
-
           <AppShell.Section grow my="xs">
             {data.map((item, index) => (
               <NavLink
