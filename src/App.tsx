@@ -1,6 +1,7 @@
 import '@mantine/core/styles.css';
 import { useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
+import { Outlet, Link, useLocation, Navigate } from 'react-router-dom';
 
 import {
   AppShell,
@@ -26,15 +27,19 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 import { UserMenu } from '@/components/UserMenu/UserMenu';
 
-import { Router } from '@/Router';
-
 export default function App() {
+  const location = useLocation();
+
+  if (location.pathname === '/') {
+    return <Navigate to="/home" />;
+  }
+
   const [opened, { toggle }] = useDisclosure(true);
   const [active, setActive] = useState(0);
 
   const data = [
-    { icon: IconHome, label: 'Home' },
-    { icon: IconGauge, label: 'Dashboard' },
+    { icon: IconHome, path: '/home', label: 'Home' },
+    { icon: IconGauge, path: '/dashboard', label: 'Dashboard' },
   ];
 
   return (
@@ -52,7 +57,7 @@ export default function App() {
           <Grid.Col span={6}>
             <Group p={15} justify="flex-start">
               <Text size="lg" fw={500}>
-                Home
+                {data[active].label}
               </Text>
             </Group>
           </Grid.Col>
@@ -78,7 +83,7 @@ export default function App() {
         <AppShell.Section grow my="xs">
           {data.map((item, index) => (
             <NavLink
-              href="#required-for-focus"
+              renderRoot={(props) => <Link to={item.path} {...props} />}
               key={item.label}
               active={index === active}
               label={item.label}
@@ -101,7 +106,7 @@ export default function App() {
         </AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main>
-        <Router />
+        <Outlet />
       </AppShell.Main>
     </AppShell>
   );
