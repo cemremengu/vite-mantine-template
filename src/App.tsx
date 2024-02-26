@@ -24,8 +24,8 @@ import {
   IconHome,
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
-import { UserMenu } from '@/components/UserMenu/UserMenu';
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle';
+import { UserMenu } from '@/components/UserMenu';
 
 export default function App() {
   const location = useLocation();

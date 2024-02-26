@@ -3,6 +3,7 @@ import { LoadingOverlay } from '@mantine/core';
 import { HomePage } from '@/pages/Home.page';
 import { DashboardPage } from '@/pages/Dashboard.page';
 import App from '@/App';
+import NotFound from '@/components/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         element: <DashboardPage />,
       },
     ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 
