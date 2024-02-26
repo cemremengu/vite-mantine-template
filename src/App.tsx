@@ -13,9 +13,9 @@ import {
   Flex,
   Button,
   UnstyledButton,
-  Avatar,
   Text,
   Grid,
+  Avatar,
 } from '@mantine/core';
 import {
   IconGauge,
@@ -26,12 +26,12 @@ import {
   IconPlus,
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
+import { ColorSchemeToggle } from './components/ColorSchemeToggle/ColorSchemeToggle';
 
 import { Router } from './Router';
 import { theme } from './theme';
 
 export default function App() {
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
   const [active, setActive] = useState(0);
 
@@ -51,9 +51,9 @@ export default function App() {
         layout="alt"
         header={{ height: 60 }}
         navbar={{
-          width: 250,
+          width: desktopOpened ? 200 : 60,
           breakpoint: 'sm',
-          collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+          // collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
         }}
         padding="md"
       >
@@ -71,21 +71,10 @@ export default function App() {
                 <Button size="xs" leftSection={<IconPlus size={14} />} variant="light">
                   ADD DATA
                 </Button>
-                <UnstyledButton size="sm">
-                  <Group>
-                    <Avatar src={null} radius="xl" size="sm" alt="Vitaly Rtishchev">
-                      VR
-                    </Avatar>
-                    <Flex direction="column">
-                      <Text size="sm" fw={500}>
-                        Harriette Spoonlicker
-                      </Text>
-                      <Text c="dimmed" size="xs">
-                        My Organization
-                      </Text>
-                    </Flex>
-                  </Group>
-                </UnstyledButton>
+                <ColorSchemeToggle />
+                <Avatar size={35} radius="md">
+                  CM
+                </Avatar>
               </Group>
             </Grid.Col>
           </Grid>
@@ -111,12 +100,21 @@ export default function App() {
           </AppShell.Section>
           <AppShell.Section>
             <Divider my="md" />
-            <Flex justify="flex-end" align="flex-end" direction="row">
-              <CloseButton
-                onClick={toggleDesktop}
-                icon={<IconChevronLeft size={18} stroke={1.5} />}
-              />
-            </Flex>
+            {desktopOpened ? (
+              <Flex justify="end" direction="row">
+                <CloseButton
+                  onClick={toggleDesktop}
+                  icon={<IconChevronLeft size={18} stroke={1.5} />}
+                />
+              </Flex>
+            ) : (
+              <Flex justify="center" direction="row">
+                <CloseButton
+                  onClick={toggleDesktop}
+                  icon={<IconChevronRight size={18} stroke={1.5} />}
+                />
+              </Flex>
+            )}
           </AppShell.Section>
         </AppShell.Navbar>
         <AppShell.Main>
