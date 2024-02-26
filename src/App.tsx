@@ -11,11 +11,11 @@ import {
   MantineProvider,
   Center,
   Flex,
-  Button,
-  UnstyledButton,
+  ActionIcon,
   Text,
   Grid,
   Avatar,
+  Tooltip,
 } from '@mantine/core';
 import {
   IconGauge,
@@ -68,9 +68,11 @@ export default function App() {
             </Grid.Col>
             <Grid.Col span={6}>
               <Group p={10} justify="flex-end">
-                <Button size="xs" leftSection={<IconPlus size={14} />} variant="light">
-                  ADD DATA
-                </Button>
+                <Tooltip label="Add new">
+                  <ActionIcon p={5} radius="md" size={35} variant="light">
+                    <IconPlus size="sm" />
+                  </ActionIcon>
+                </Tooltip>
                 <ColorSchemeToggle />
                 <Avatar size={35} radius="md">
                   CM
