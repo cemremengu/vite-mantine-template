@@ -50,7 +50,7 @@ export default function App() {
         width: opened ? 200 : 60,
         breakpoint: 'sm',
       }}
-      padding="md"
+      padding="xl"
     >
       <AppShell.Header>
         <Grid>
