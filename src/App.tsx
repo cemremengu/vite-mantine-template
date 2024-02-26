@@ -14,7 +14,6 @@ import {
   ActionIcon,
   Text,
   Grid,
-  Avatar,
   Tooltip,
 } from '@mantine/core';
 import {
@@ -27,6 +26,7 @@ import {
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { ColorSchemeToggle } from './components/ColorSchemeToggle/ColorSchemeToggle';
+import { UserMenu } from './components/UserMenu/UserMenu';
 
 import { Router } from './Router';
 import { theme } from './theme';
@@ -74,9 +74,7 @@ export default function App() {
                   </ActionIcon>
                 </Tooltip>
                 <ColorSchemeToggle />
-                <Avatar size={35} radius="md">
-                  CM
-                </Avatar>
+                <UserMenu />
               </Group>
             </Grid.Col>
           </Grid>
