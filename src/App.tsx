@@ -83,7 +83,7 @@ export default function App() {
         <AppShell.Navbar p="xs">
           <AppShell.Section>
             <Center h={50}>
-              <MantineLogo size={25} />
+              <MantineLogo type={desktopOpened ? 'full' : 'mark'} size={25} />
             </Center>
           </AppShell.Section>
           <AppShell.Section grow my="xs">
