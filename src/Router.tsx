@@ -3,6 +3,7 @@ import { HomePage } from '@/pages/Home.page';
 
 const router = createBrowserRouter([
   {
+    id: 'home',
     path: '/',
     element: <HomePage />,
   },
