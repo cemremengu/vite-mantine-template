@@ -25,8 +25,8 @@ import {
   IconPlus,
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import { ColorSchemeToggle } from './components/ColorSchemeToggle/ColorSchemeToggle';
-import { UserMenu } from './components/UserMenu/UserMenu';
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
+import { UserMenu } from '@/components/UserMenu/UserMenu';
 
 import { Router } from './Router';
 import { theme } from './theme';
