@@ -15,6 +15,7 @@ import {
   Text,
   Grid,
   Tooltip,
+  Burger,
 } from '@mantine/core';
 import {
   IconGauge,
@@ -49,6 +50,7 @@ export default function App() {
       navbar={{
         width: opened ? 250 : 60,
         breakpoint: 'sm',
+        collapsed: { mobile: !opened },
       }}
       padding="xl"
     >
@@ -56,6 +58,7 @@ export default function App() {
         <Grid>
           <Grid.Col span={6}>
             <Group p={15} justify="flex-start">
+              <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
               <Text size="lg" fw={500}>
                 {data[active].label}
               </Text>
