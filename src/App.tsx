@@ -48,7 +48,7 @@ export default function App() {
       layout="alt"
       header={{ height: 60 }}
       navbar={{
-        width: opened ? 250 : 60,
+        width: opened ? 230 : 60,
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
