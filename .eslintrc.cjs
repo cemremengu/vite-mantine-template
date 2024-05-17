@@ -1,8 +1,10 @@
 module.exports = {
   extends: ['mantine'],
   parserOptions: {
-    project: './tsconfig.json',
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
   },
+  ignorePatterns: ['.eslintrc.cjs'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'linebreak-style': 'off',
